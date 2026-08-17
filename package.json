@@ -1,0 +1,12 @@
+{
+  "name": "dsh-plugin-guardian",
+  "version": "1.0.0",
+  "description": "DSH Plugin Guardian - Safe uninstall with snapshot rollback",
+  "main": "src/host.js",
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": ["dsh", "plugin", "guardian", "uninstall"],
+  "author": "",
+  "license": "MIT"
+}
