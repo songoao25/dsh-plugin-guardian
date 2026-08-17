@@ -1,12 +1,46 @@
 {
   "name": "dsh-plugin-guardian",
-  "version": "1.0.0",
-  "description": "DSH Plugin Guardian - Safe uninstall with snapshot rollback",
-  "main": "src/host.js",
-  "scripts": {
-    "test": "echo \"No tests yet\""
+  "version": "1.1.0",
+  "description": "DeepSeek Harness 插件管家：安全地卸载插件、自动清理残留、出问题一键退回。全程图形界面，不用碰命令行。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "plugin-manager",
+    "guardian",
+    "uninstall",
+    "cleanup"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/songoao25/dsh-plugin-guardian.git"
   },
-  "keywords": ["dsh", "plugin", "guardian", "uninstall"],
-  "author": "",
-  "license": "MIT"
+  "homepage": "https://github.com/songoao25/dsh-plugin-guardian",
+  "author": "songoao25",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ]
 }
